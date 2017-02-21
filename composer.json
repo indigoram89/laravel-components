@@ -1,0 +1,43 @@
+{
+    "name": "indigoram89/laravel-components",
+    "description": "Components for Laravel 5.",
+    "keywords": [
+        "indigoram89", "laravel", "components"
+    ],
+    "homepage": "https://github.com/indigoram89/laravel-components",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Max Orlov",
+            "email": "maksimorlov.personal@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "illuminate/database": ">=5.4",
+        "illuminate/routing": ">=5.4",
+        "illuminate/support": ">=5.4",
+        "illuminate/http": ">=5.4",
+        "indigoram89/laravel-fields": "1.0.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.*",
+        "orchestra/testbench": "^3.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Indigoram89\\Components\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Indigoram89\\Components\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
+}
