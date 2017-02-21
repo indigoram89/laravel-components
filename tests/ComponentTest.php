@@ -26,11 +26,17 @@ class ComponentTest extends TestCase
     /** @test */
     public function parent_page()
     {
-        // page('test.show')->setParent('test');
+        page('test.show')->setParent('test');
 
-        // $parent = page()->parent;
-        // dd($parent);
-        // $this->assertTrue($parent->isKey('test'));
+        $this->assertTrue(page()->parent->isKey('test'));
+    }
+
+    /** @test */
+    public function child_page()
+    {
+        page('test')->addChild('test.show');
+
+        $this->assertTrue(page()->children->first()->isKey('test.show'));
     }
 
     /** @test */

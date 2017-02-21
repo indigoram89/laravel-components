@@ -156,7 +156,7 @@ class Component extends Model
     }
 
     /**
-     * Set parent root component.
+     * Set a parent root component.
      *
      * @param string $key
      * @return void
@@ -169,13 +169,26 @@ class Component extends Model
     }
 
     /**
-     * Has many child root components.
+     * Has many a child root components.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function children()
     {
         return $this->hasMany(Component::class, 'parent_id');
+    }
+
+    /**
+     * Set a child root component.
+     *
+     * @param string $key
+     * @return void
+     */
+    public function addChild(string $key)
+    {
+        $this->children()->save(
+            Component::firstOrCreate(compact('key'))
+        )->save();
     }
 
     /**
